@@ -1,7 +1,7 @@
 package id.ac.polbeng.ErmaYuni.test_kelas
 
 open class Teacher {
-    // Must use "open" modifier to allow child classes to override it
+
     open fun teach() {
         println("Teaching...")
     }
@@ -12,7 +12,7 @@ open class Teacher {
 }
 
 class MathsTeacher : Teacher() {
-    // Must use "override" modifier to override a base class function
+
     override fun teach() {
         println("Teaching Maths...")
     }
