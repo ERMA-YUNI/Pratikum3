@@ -3,23 +3,32 @@ package id.ac.polbeng.ErmaYuni.test_kelas
 import java.text.NumberFormat
 import java.util.*
 
-open  class EmployeeD {
-    open val baseSalary: Int = 300000
+open class EmployeeD {
+    // Use "open" modifier to allow child classes to override this property
+    open val baseSalary: Int = 3000000
 }
-class  Programmer : EmployeeD() {
+
+class Programmer : EmployeeD() {
+
     override val baseSalary: Int = 5000000
 }
+
 class SoftwareEngineer : EmployeeD() {
-    override val baseSalary: Int = 600000
+
+    override val baseSalary: Int = 6000000
 }
-class  ProjectManager : EmployeeD() {
-    override val baseSalary: Int = 800000
+
+class ProjectManager : EmployeeD() {
+
+    override val baseSalary: Int = 8000000
 }
-fun toRupiahFormat(baseSalary: Int) : String {
-    val localeID = Locale("in", "ID")
+
+fun toRupiahFormat(baseSalary: Int) : String{
+    val localeID =  Locale("in", "ID")
     val numberFormat = NumberFormat.getCurrencyInstance(localeID)
     return numberFormat.format(baseSalary).toString()
 }
+
 fun main() {
     val employee = EmployeeD()
     println("Rata-rata gaji ${employee.javaClass.simpleName} = ${toRupiahFormat(employee.baseSalary)}")
