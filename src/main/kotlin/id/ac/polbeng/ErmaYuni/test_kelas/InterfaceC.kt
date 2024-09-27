@@ -1,35 +1,34 @@
 package id.ac.polbeng.ErmaYuni.test_kelas
 
-interface x {
+interface X {
     fun demoX() {
         println("demoX function")
     }
-
     fun funcX()
 }
-interface Y {
+
+interface Y  {
     fun demoY() {
         println("demoY function")
     }
-
     fun funcY()
 }
-class  MyClassA: x, Y {
-    override fun funcX() {
-        println("hello")
-    }
 
+// This class implements X and Y interfaces
+class MyClassA: X, Y {
+    override fun funcX() {
+        println("Hello")
+    }
     override fun funcY() {
         println("Hi")
     }
 
-    fun main() {
-        val obj = MyClassA()
-        obj.demoX()
-        obj.demoY()
-        obj.funcX()
-        obj.funcY()
-
-    }
 }
 
+fun main() {
+    val obj = MyClassA()
+    obj.demoX()
+    obj.demoY()
+    obj.funcX()
+    obj.funcY()
+}
